@@ -14,5 +14,8 @@
   "devDependencies": {
     "webpack-dev-server": "^2.9.7"
   },
-  "scripts": { "postinstall": "cd client && npm install" }
+  "scripts": { "postinstall": "cd client && npm install" },
+  "engines": {
+      "node": "6.11.2"
+   }
 }
