@@ -1,16 +1,12 @@
 class Order < ApplicationRecord
   include HTTParty
-  base_uri 'https://www.realhubapp.com/api/v2'
+  base_uri 'https://jsonplaceholder.typicode.com'
   format :json
 
-  def initialize(api_key)
-    @options = { :headers => {
-                'x-api-token' => api_key }
-               }
-  end
+
 
   def index
-    self.class.get '/orders', @options
+    self.class.get '/comments'
   end
 end
 

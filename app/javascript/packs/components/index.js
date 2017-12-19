@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import ReactOnRails from 'react-on-rails';
 
 
-// ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
 
 ReactOnRails.register({ App });

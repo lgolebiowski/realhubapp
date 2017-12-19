@@ -6,7 +6,7 @@ import OrderItem from './OrderItem';
 class Order extends Component {
   
   state = {
-      orders: [],
+      orders: {},
       agency: {
         name: 'XYZ',
         address: '7/5 Waine St',
@@ -24,7 +24,6 @@ class Order extends Component {
 // but here is the way, how I would get them here and place to the state (that's why in the costructor method you see empty array of 'orders')    
 
   componentDidMount () {
-
     axios 
       .get('/orders')
       .then(response => {
