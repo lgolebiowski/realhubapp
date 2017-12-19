@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <h1>Orders</h1>
         <div className="Content">
-          <Order />
+          <Order orders={this.props.orders}/>
         </div>
       </div>
     );

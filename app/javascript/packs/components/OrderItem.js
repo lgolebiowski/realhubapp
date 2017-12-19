@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class OrderItem extends Component {
     
     state = {
-        status: false
+        status: this.props.status_id
     }
 
     toggleHandler = (event) => {
@@ -22,12 +22,12 @@ class OrderItem extends Component {
 
     return (
       <div className="Product">      
-        <p>{this.props.name}</p>
-        <p>{this.props.email}</p>
+        <p>{this.props.title}</p>
+        <p>{this.props.address}</p>
         <ul>
-          <li>{this.props.postID}</li>
+          <li>{this.props.total}</li>
           <li>{this.props.id}</li>
-          <li>{this.props.email}</li>
+          <li>{this.props.status_id}</li>
           <li>
             <button 
               className="Button">

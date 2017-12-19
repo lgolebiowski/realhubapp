@@ -7,23 +7,19 @@ import OrderItem from './OrderItem';
 class Order extends Component {
   
   state = {
-      orders: []
-    }
-
-  componentDidMount () {
-
-    axios 
-      .get('https://jsonplaceholder.typicode.com/comments')
-      .then(response => {
-        this.setState({orders: response.data});
-          console.log(response)
-      });
+      orders: this.props.orders
     }
 
   render() {
    
-    const orders = this.state.orders.map(order => {
-      return <OrderItem name = {order.name} email = {order.email} product = {this.state.product} status = {this.state.status}/>;
+    const orders = this.state.orders.map((order) => {
+      return <OrderItem 
+        title = {order.title} 
+        address = {order.shipping_address} 
+        total = {order.total} 
+        id={order.id} 
+        status_id={order.status_id} 
+        />;
     });
 
     return (
