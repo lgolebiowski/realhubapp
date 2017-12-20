@@ -19,6 +19,7 @@ class Order extends Component {
         total = {order.total} 
         id={order.id} 
         status_id={order.status_id} 
+        uri={order.uri}
         />;
     });
 

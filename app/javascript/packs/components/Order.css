@@ -34,5 +34,14 @@
 	margin: 0 5px;
 }
 
-
-
+@media only screen and (max-width : 480px) {
+  .Order h1 {
+    width: 90%;
+    color: yellow;
+  }
+} 
+@media (min-width: 481px) and (max-width: 768px) {
+  .Order {
+    width: 75%;    
+  } 
+}

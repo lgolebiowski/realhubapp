@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class OrderItem extends Component {
     
     state = {
-        status: this.props.status_id 
-    }
+        status: this.props.status_id, 
+      }
 
     toggleHandler = (event) => {
       const label = this.state.status;
@@ -17,11 +17,23 @@ class OrderItem extends Component {
       }
     }
 
+    downloadURI = (uri, name) => {
+      uri.name.preventDefault();
+      var link = document.createElement("a");
+      link.download = name;
+      link.href = uri;
+      link.onClick();
+    }
+
     render() {
 
     const style =  {
       color: 'red',
       fontWeight: 'bold'
+    };
+
+    const buttonStyle =  {
+      border: '1px solid red'
     };
 
     return (
@@ -32,10 +44,22 @@ class OrderItem extends Component {
           <li>x</li>
           <li>{this.props.title}</li>
           <li>
+            {this.props.uri ? 
             <button 
-              className="Button">
+              style = {buttonStyle}
+              className="Button"
+              // value="Download" 
+              // onClick={this.downloadURI(this.props.uri, 'Artboard.jpg')}
+              >
               Download Artwork
+            </button>  
+             :
+            <button 
+              className="Button"
+              >
+              No Artwork
             </button>
+            }
             <button 
               className="Button"
               onClick = {this.toggleHandler}>
