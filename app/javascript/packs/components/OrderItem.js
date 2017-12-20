@@ -17,8 +17,7 @@ class OrderItem extends Component {
       }
     }
 
-    downloadURI = (uri, name) => {
-      uri.name.preventDefault();
+    handleDownload = (uri, name) => {
       var link = document.createElement("a");
       link.download = name;
       link.href = uri;
@@ -45,12 +44,14 @@ class OrderItem extends Component {
           <li>{this.props.title}</li>
           <li>
             {this.props.uri ? 
-            <button 
+            <button
               style = {buttonStyle}
               className="Button"
-              // value="Download" 
-              // onClick={this.downloadURI(this.props.uri, 'Artboard.jpg')}
-              >
+              onClick={(event) => {
+                event.preventDefault();
+                this.handleDownload(this.props.uri, 'Artboard.jpg');
+              }}
+                >
               Download Artwork
             </button>  
              :

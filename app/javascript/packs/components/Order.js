@@ -14,6 +14,7 @@ class Order extends Component {
    
     const orders = this.state.orders.map((order) => {
       return <OrderItem 
+        key= {order.id}
         title = {order.title} 
         address = {order.shipping_address} 
         total = {order.total} 
