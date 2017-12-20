@@ -3,14 +3,18 @@ import React, { Component } from 'react';
 class OrderItem extends Component {
     
     state = {
-        status: this.props.status_id
+        status: this.props.status_id 
     }
 
     toggleHandler = (event) => {
-    const label = this.state.status;
-    this.setState({
-      status: !label
-    });
+      const label = this.state.status;
+      {label === 2 ? this.setState({
+        status: 3 
+      })
+      : this.setState({
+        status: 2 
+      });
+      }
     }
 
     render() {
@@ -22,16 +26,15 @@ class OrderItem extends Component {
 
     return (
       <div className="Product">      
-        <p>{this.props.title}</p>
-        <p>{this.props.address}</p>
+        <p className="Title">{this.props.address}</p>
         <ul>
           <li>{this.props.total}</li>
-          <li>{this.props.id}</li>
-          <li>{this.props.status_id}</li>
+          <li>x</li>
+          <li>{this.props.title}</li>
           <li>
             <button 
               className="Button">
-              Download
+              Download Artwork
             </button>
             <button 
               className="Button"
@@ -40,13 +43,14 @@ class OrderItem extends Component {
             </button>
           </li>
           <li>
-            {this.state.status === true?
+            {this.state.status === 2 ?
               <div
               className="Status"
+              >approved</div>
+              :
+              <div className="Status"
               style = {style}
               >printed</div>
-              :
-              <div className="Status">approved</div>
               }
           </li>
         </ul>   

@@ -1,5 +1,5 @@
 .Order {
-	width: 600px;
+	width: 69%;
 	height: 20vh;
 	margin: 5px auto;	
 }
@@ -9,19 +9,23 @@
 .Agency li {
 	display: inline-block;
 	margin: 10px;
-	font-size: 14px;
-	font-weight: 600;
+	font-size: 1rem;
+	font-weight: 400;
 }
 .Product {
 	float: left;
+	border-bottom: 1px solid #000;
+	margin: 1px;
 }
 .Product li {
+	text-align: left;
 	display: inline-block;
-	margin: 10px;
+	padding-bottom: 20px;
 }
-.Product {
-	border: 1px solid #000;
-	margin: 1px;
+.Product .Title {
+	text-align: left;
+	font-size: 1rem;
+	font-weight: 600;
 }
 .Button {
 	display: inline-block;
@@ -29,3 +33,6 @@
 	border-radius: 0px;
 	margin: 0 5px;
 }
+
+
+
