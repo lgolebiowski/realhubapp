@@ -21,7 +21,7 @@ class OrderItem extends Component {
       var link = document.createElement("a");
       link.download = name;
       link.href = uri;
-      link.onClick();
+      link.click();
     }
 
     render() {
